@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="eng" lang="eng">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=320">
+    <title>The invisible gradient technique demo: cross-browser SVG support with fallback</title>
+<style type="text/css">
+
+	.picture{
+		
+		background: transparent url(puzzle-fallback.png) center center no-repeat;		
+		background-image: -webkit-linear-gradient(transparent, transparent), url(puzzle-vector.svg);
+		background-image: linear-gradient(transparent, transparent), url(puzzle-vector.svg);
+	
+		background-size: 100% 100%;
+		height: 400px;
+		width: 400px;
+	}
+
+
+	#container{
+		margin: 100px 100px;
+	}
+
+</style>
+
+</head>
+<body>
+<div id="container">
+<h1>The invisible gradient technique demo: Cross-browser SVG support with fallback</h1>
+
+<p>The image below has been zoomed, if you have a modern browser you'll see <a href="puzzle-vector.svg"> a hi-definition SVG vector image</a>. 
+	If you have an old browser, you'll see  <a href="puzzle-fallback.png">a low definition PNG image</a>. The technique is explained at <a href="http://pauginer.tumblr.com/post/36614680636/invisible-gradient-technique">this blog entry</a>.</p>
+
+
+<div class="picture"></div> 
+
+
+
+</div>
+</body>
+</html>
