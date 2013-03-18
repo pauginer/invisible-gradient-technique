@@ -1,0 +1,8 @@
+// Sass mixin for SVG with fallback support using the invisible gradient technique
+
+@mixin vector-image($img, $fallback, $position: center center, $size: auto) {
+  background: transparent url($fallback) $position no-repeat;
+  background-image: -webkit-linear-gradient(transparent, transparent), url($img);
+  background-image: linear-gradient(transparent, transparent), url($img);
+  background-size: $size;
+}

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="eng" lang="eng">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=320">
+    <meta name="viewport" content="width=480">
     <title>The invisible gradient technique demo: cross-browser SVG support with fallback</title>
 <style type="text/css">
 
@@ -12,17 +12,29 @@
 		background: transparent url(puzzle-fallback.png) center center no-repeat;		
 		background-image: -webkit-linear-gradient(transparent, transparent), url(puzzle-vector.svg);
 		background-image: linear-gradient(transparent, transparent), url(puzzle-vector.svg);
-	
-		background-size: 100% 100%;
-		height: 400px;
-		width: 400px;
+		background-size: contain;
+		height: 800px;
+		max-width: 100%;
 	}
 
 
 	#container{
-		margin: 100px 100px;
+		margin: 50px 50px;
 	}
 
+
+/* Media queries to  adapt the image height to the screen width for different devices.*/
+@media only screen and (max-width: 650px) {
+	.picture{
+		height: 500px;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.picture{
+		height: 300px;
+	}
+}
 </style>
 
 </head>
@@ -36,7 +48,7 @@
 
 <div class="picture"></div> 
 
-
+<p>More information and mixins for Less and Sass are <a href="https://github.com/pauginer/invisible-gradient-technique">available at GitHub</a>.</p>
 
 </div>
 </body>
